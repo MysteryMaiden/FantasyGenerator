@@ -4,21 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fantasy Name Generator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Welcome to "Fantasy Name Generator!"</h1>
-    <h2>Click the button to generate a random name</h2>
+    <div class="container">
+        <h1>Welcome to the Fantasy Name Generator!</h1>
+        <h2>Click the button to generate a random name</h2>
 
-    <input type="radio" name="maleorfemale" id="male" value="male">
-    <label for="male">Male</label><br>
-    <input type="radio" name="maleorfemale" id="female" value="Female">
-    <label for="female">Female</label><br>
-    <input type="radio" name="maleorfemale" id="random" value="Random">
-    <label for="female">Random</label><br>
+        <div class="radio-group">
+            <input type="radio" name="maleorfemale" id="male" value="male">
+            <label for="male">Male</label>
 
-    <input type="submit" id="generateButton" value="Generate!">
-    <p id='ReplaceableText'>Generating your fantasy name...</p>
+            <input type="radio" name="maleorfemale" id="female" value="Female">
+            <label for="female">Female</label>
 
-    <script src="./generator.js"></script> 
+            <input type="radio" name="maleorfemale" id="random" value="Random">
+            <label for="random">Random</label>
+        </div>
+
+        <input type="submit" id="generateButton" value="Generate!">
+        <p id="ReplaceableText">Generating your fantasy name...</p>
+    </div>
+
+    <script src="generator.js"></script> 
 </body>
 </html>
