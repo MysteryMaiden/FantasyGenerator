@@ -1,0 +1,81 @@
+/* General body and page styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f0f4f8; /* Soft background color */
+    color: #333; /* Dark text for readability */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full screen height */
+    margin: 0;
+    text-align: center;
+}
+
+/* Container to hold all elements in the center */
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+}
+
+/* Headings and text styling */
+h1 {
+    font-size: 2.5rem;
+    color: #2a4d73; /* Deep blue for headings */
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Radio button styling */
+.radio-group {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.radio-group input[type="radio"] {
+    margin: 0 10px;
+}
+
+.radio-group label {
+    font-size: 1rem;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+/* Button styling */
+#generateButton {
+    background-color: #4CAF50; /* Green button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+#generateButton:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Text displaying generated name */
+#ReplaceableText {
+    font-size: 1.2rem;
+    color: #2a4d73;
+    font-weight: bold;
+}
+
+/* Optional spacing adjustments */
+input[type="radio"] {
+    margin-top: 10px;
+}
