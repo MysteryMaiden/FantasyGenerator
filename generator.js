@@ -28,7 +28,6 @@ const maleNames = [
 function generateNumber() {
     let maleOrFemale = '';
 
-
     const maleRadio = document.getElementById('male');
     const femaleRadio = document.getElementById('female');
     const randomRadio = document.getElementById('random');
@@ -38,14 +37,12 @@ function generateNumber() {
     } else if (femaleRadio.checked) {
         maleOrFemale = 'female';
     } else if (randomRadio.checked) {
-
         let answer = Math.floor(Math.random() * 2); 
         maleOrFemale = answer === 0 ? 'male' : 'female';
     } else {
-        console.log('Please select Male, Female, or Random');
+        replace.innerHTML = 'Please select Male, Female, or Random.';
         return; 
     }
-
 
     let generatedNum;
     let ReturnedText;
@@ -58,11 +55,5 @@ function generateNumber() {
     }
     replace.innerHTML = ReturnedText;
 }
-
-
-button.addEventListener('click', generateNumber);
-    replace.innerHTML = ReturnedText;
-}
-
 
 button.addEventListener('click', generateNumber);
