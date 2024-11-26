@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ability Score Generator</title>  
+    <link rel="stylesheet" href="style2.css">
 </head>
 <body>
     <!-- Navbar Section -->
-    <nav class="navbar">
+    <div class="navbar">
         <h2>Fantasy Generator</h2>
         <ul class="nav-links">
             <li><a href="./index.html">Name Generator</a></li>
             <li><a href="./ability.html">Ability Generator</a></li>
-            <li><a href="#">Personality Generator</a></li>
-            <li><a href="#">D&D Character Generator</a></li>
+            <li><a href="#personality">Personality Generator</a></li>
+            <li><a href="#dnd">D&D Character Generator</a></li>
         </ul>
-    </nav>
+    </div>
 
     <!-- Main content -->
     <main>
@@ -23,17 +24,38 @@
         <p>Just click the generate button to generate new ability scores</p>
         
         <ul>
-            <li><strong>Strength (STR):</strong><p id="STR"></p></li>
-            <li><strong>Dexterity (DEX):</strong><p id="DEX"></p></li>
-            <li><strong>Constitution (CON):</strong><p id="CON"></p></li>
-            <li><strong>Intelligence (INT):</strong><p id="INT"></p></li>
-            <li><strong>Wisdom (WIS):</strong><p id="WIS"></p></li>
-            <li><strong>Charisma (CHA):</strong><p id="CHA"></p></li>
+            <li class="abilities">
+                <strong>Strength (STR):</strong>
+                <p id="STR">Generating...</p>
+            </li>
+            <li class="abilities">
+                <strong>Dexterity (DEX):</strong>
+                <p id="DEX">Generating...</p>
+            </li>
+            <li class="abilities">
+                <strong>Constitution (CON):</strong>
+                <p id="CON">Generating...</p>
+            </li>
+            <li class="abilities">
+                <strong>Intelligence (INT):</strong>
+                <p id="INT">Generating...</p>
+            </li>
+            <li class="abilities">
+                <strong>Wisdom (WIS):</strong>
+                <p id="WIS">Generating...</p>
+            </li>
+            <li class="abilities">
+                <strong>Charisma (CHA):</strong>
+                <p id="CHA">Generating...</p>
+            </li>
         </ul>
 
         <button id="generateButton">Generate Ability Scores</button>
+
+        
     </main>
 
-    <script src="generator.js"></script>
+    <script src="Rolls.js"></script>
 </body>
 </html>
+
