@@ -7,7 +7,7 @@ const vowels = ['A', 'E', 'I', 'O', 'U'];
 // Function to generate a random name
 function generateName() {
     // Randomly choose the length (2, 4, 6, 8, or 10)
-    const lengths = [2, 4, 6, 8, 10];
+    const lengths = [2, 4, 6];
     const nameLength = lengths[Math.floor(Math.random() * lengths.length)];
     
     let name = '';
