@@ -1,27 +1,23 @@
 const button = document.getElementById('generateButton');
 const replace = document.getElementById('ReplaceableText');
-
+const next = document.getElementById('NextButton');
+let generatedName;
+let generated = "no";
 const consonants = ['B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z'];
 const vowels = ['A', 'E', 'I', 'O', 'U'];
 
 // Function to generate a random name
 function generateName() {
-    // Randomly choose the length (2, 4, 6, 8, or 10)
-    const lengths = [2, 4, 6];
+    const lengths = [2, 4, 6, 8, 10];
     const nameLength = lengths[Math.floor(Math.random() * lengths.length)];
-    
     let name = '';
     for (let i = 0; i < nameLength; i++) {
         if (i % 2 === 0) {
-            // Add a random consonant
             name += consonants[Math.floor(Math.random() * consonants.length)];
         } else {
-            // Add a random vowel
             name += vowels[Math.floor(Math.random() * vowels.length)];
         }
     }
-    
-    // Format the name: lowercase everything, capitalize the first letter
     name = name.toLowerCase();
     return name.charAt(0).toUpperCase() + name.slice(1);
 }
@@ -42,13 +38,33 @@ function generateNumber() {
         let answer = Math.floor(Math.random() * 2);
         maleOrFemale = answer === 0 ? 'male' : 'female';
     } else {
-        console.log('Please select Male, Female, or Random');
+        replace.innerHTML = 'Please select Male, Female, or Random';
         return;
     }
 
-    const generatedName = generateName(); // Use the new name generator
+    generatedName = generateName();
+    console.log(`Generated Name: ${generatedName}`);
     const ReturnedText = `Your fantasy name is: ${generatedName}`;
     replace.innerHTML = ReturnedText;
+    if (generatedName) {
+        generated = "yes";
+        console.log(`Generated Status: ${generated}`);
+    }
 }
 
-button.addEventListener('click', generateNumber);
+// Loop to check when `generated` is "yes"
+function checkGenerated() {
+    const interval = setInterval(() => {
+        console.log(`Checking generated: ${generated}`);
+        if (generated === "yes") {
+            next.style.display='block'; // Make the button visible
+            clearInterval(interval); // Stop checking once "yes" is reached
+        }
+    }, 100);
+}
+
+// Attach event listener to button
+button.addEventListener('click', () => {
+    generateNumber();
+    checkGenerated();
+});
