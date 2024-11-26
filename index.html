@@ -12,7 +12,7 @@
         <h2>Fantasy Generator</h2>
         <ul class="nav-links">
             <li><a href="#">Name Generator</a></li>
-            <li><a href="./ability.html">Ability Generator</a></li>
+            <li><a href="./AbilityScores.html">Ability Generator</a></li>
             <li><a href="#">Personality Generator</a></li>
             <li><a href="#">D&D Character Generator</a></li>
         </ul>
@@ -21,7 +21,7 @@
     <!-- Main content -->
     <div class="container">
         <h1>Welcome to the Fantasy Generator!</h1>
-        <h2>To get started, lets choose a name. Click the button to generate a random name.</h2>
+        <h2>To get started, let's choose a name. Click the button to generate a random name.</h2>
 
         <div class="radio-group">
             <input type="radio" name="maleorfemale" id="male" value="male">
@@ -35,7 +35,9 @@
         </div>
 
         <input type="submit" id="generateButton" value="Generate!">
-        <p id="ReplaceableText">Generating your fantasy name...</p>
+        <p id="ReplaceableText">Click the button to generate a name!</p>
+        <!-- Next button starts hidden -->
+        <a href="./AbilityScores.html" id="NextButton" style="display:none;">Next</a>
     </div>
 
     <script src="generator.js"></script> 
