@@ -113,3 +113,31 @@ h2 {
 input[type="radio"] {
     margin-top: 10px;
 }
+
+#nextButton {
+    color: #2a4d73;
+    font-weight: bold;
+}
+#nextButton:active {
+    color: #2a4d73;
+    font-weight: bold;
+}
+
+---->
+
+
+.button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
