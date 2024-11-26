@@ -1,0 +1,191 @@
+/* General body and page styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f0f4f8; /* Soft background color */
+    color: #333; /* Dark text for readability */
+    margin: 0;
+}
+
+.nav-links a:hover,
+.nav-links a:focus,
+.nav-links a:active {
+    text-decoration: none; /* Prevent underline on hover or focus */
+}
+
+.nav-links a {
+    background-color: rgba(255, 255, 255, 0) !important; /* Ensure the background gets applied */
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2a4d73; /* Deep blue background for navbar */
+    color: white;
+    padding: 15px 30px; /* Even spacing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    position: sticky; /* Makes the navbar fixed at the top when scrolling */
+    top: 0;
+    z-index: 1000;
+}
+
+/* Navbar logo/title */
+.navbar h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: white;
+    flex-shrink: 0; /* Prevent title from shrinking */
+}
+
+/* Navbar links container */
+.nav-links {
+    background-color:none !important;
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 15px; /* Spacing between links */
+}
+
+/* Navbar links */
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none !important; /* Force removal */
+    font-size: 1rem;
+    font-weight: 500; /* Slightly bold for visibility */
+    padding: 8px 15px; /* Add spacing for clickable area */
+    border-radius: 5px;
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+    display: inline-block; /* Ensures proper box model rendering */
+    border-bottom: none !important;
+}
+
+/* Hover and active states */
+.nav-links a:hover,
+.nav-links a:focus {
+    color: #ffcc00; /* Gold color on hover/focus */
+    background-color: rgba(255, 255, 255, 0.1); /* Light overlay for hover effect */
+}
+
+.nav-links a:active {
+    color: #ffc107; /* Slightly darker gold */
+}
+
+/* Mobile responsiveness (optional) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack navbar items vertically */
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap; /* Wrap links to the next row if needed */
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem; /* Reduce size for smaller screens */
+        padding: 6px 12px; /* Adjust padding for smaller screens */
+    }
+}
+
+/* Main container styling */
+main {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+/* Headings and text styling */
+h1 {
+    font-size: 2.5rem;
+    color: #2a4d73; /* Deep blue for headings */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* List styling for ability scores */
+.abilities ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    border: 1px solid #ddd; /* Add a light border around the list */
+    border-radius: 10px;
+    background-color: #f9f9f9; /* Light background for better contrast */
+    overflow: hidden; /* Round the edges cleanly */
+}
+
+.abilities ul li {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.abilities {
+    padding: 10px 20px; /* Add spacing inside each item */
+    display: flex;
+    justify-content: space-between; /* Align label and value */
+    align-items: center;
+    border-bottom: 1px solid #ddd; /* Divider between list items */
+}
+
+.abilities:last-child {
+    border-bottom: none; /* Remove bottom border for the last item */
+}
+
+ul li strong {
+    color: #2a4d73; /* Deep blue for labels */
+    font-size: 1.2rem; /* Slightly larger font */
+}
+
+ul li p {
+    margin: 0;
+    font-weight: bold;
+    color: #333;
+    font-size: 1.2rem; /* Match label font size */
+    text-align: right; /* Align text to the right */
+    width: 50%; /* Ensure consistent alignment for values */
+}
+
+/* Additional hover effect for list items (optional) */
+.abilities:hover {
+    background-color: #e6f7ff; /* Subtle blue highlight on hover */
+}
+
+/* Button styling */
+#generateButton {
+    background-color: #4CAF50; /* Green button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 0 auto;
+}
+
+#generateButton:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
