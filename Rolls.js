@@ -22,3 +22,5 @@ console.log(rolls)
 }
 
 BTN.addEventListener('click', changeText)
+
+export default {rolls};
