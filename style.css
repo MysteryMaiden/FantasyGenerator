@@ -141,3 +141,70 @@ input[type="radio"] {
 .button:hover {
     background-color: #0056b3;
 }
+
+.PersonalityList {
+    padding: 15px 25px; /* More padding for better spacing */
+    display: flex;
+    justify-content: space-between; /* Align label and value */
+    align-items: center;
+    border-bottom: 1px solid #ccc; /* Subtle divider */
+    transition: background-color 0.3s; /* Smooth hover effect */
+}
+
+.PersonalityList:last-child {
+    border-bottom: none; /* Remove bottom border for the last item */
+}
+
+.PersonalityList:hover {
+    background-color: #f1f1f1; /* Light hover effect for better interactivity */
+}
+
+.PersonalityList ul {
+    list-style: none;
+    padding: 0;
+    margin: 25px 0;
+    border: 1px solid #ccc; /* Slightly darker border for contrast */
+    border-radius: 10px;
+    background-color: #fdfdfd; /* Subtle background for clarity */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a soft shadow for depth */
+    overflow: hidden; /* Round edges smoothly */
+}
+
+.PersonalityList ul li {
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee; /* Add dividers between items */
+    transition: background-color 0.3s, color 0.3s; /* Smooth hover effect */
+}
+
+.PersonalityList ul li:last-child {
+    border-bottom: none; /* Remove border for the last item */
+}
+
+.PersonalityList ul li:hover {
+    background-color: #f5f5f5; /* Subtle hover background */
+    color: #333; /* Slightly darker text for focus */
+}
+
+.PersonalityList ul li.chosen {
+    background-color: #e8f4ff; /* Highlighted background for chosen item */
+    color: #007bff; /* Accent color for emphasis */
+    font-weight: bold;
+    border-left: 5px solid #007bff; /* Additional visual cue */
+}
+
+.ullist ul {
+    list-style: none;
+    padding-inline-start: 0 !important; /* Override inline-start padding */
+    padding: 0; /* Reset all padding */
+    margin: 25px 0;
+    border: 1px solid #ccc; /* Slightly darker border for contrast */
+    border-radius: 10px;
+    background-color: #fdfdfd; /* Subtle background for clarity */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a soft shadow for depth */
+    overflow: hidden; /* Round edges smoothly */
+}
