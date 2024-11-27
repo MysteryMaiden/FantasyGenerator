@@ -68,3 +68,5 @@ button.addEventListener('click', () => {
     generateNumber();
     checkGenerated();
 });
+
+export { maleOrFemale, generatedName};
