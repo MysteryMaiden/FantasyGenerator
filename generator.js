@@ -1,13 +1,8 @@
-const button = document.getElementById('generateButton');
-const replace = document.getElementById('ReplaceableText');
-const next = document.getElementById('NextButton');
-let generatedName;
-
 // Arrays for generating random names
 const consonants = ['B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z'];
 const vowels = ['A', 'E', 'I', 'O', 'U'];
 
-// Function to generate a random name
+// Function to generate a random fantasy name
 function generateName() {
     const lengths = [2, 3, 4, 5, 6];
     const nameLength = lengths[Math.floor(Math.random() * lengths.length)];
@@ -23,28 +18,18 @@ function generateName() {
 }
 
 // Function to handle gender selection and generate a name
-function generateNumber() {
-    const maleRadio = document.getElementById('male');
-    const femaleRadio = document.getElementById('female');
-    const randomRadio = document.getElementById('random');
+function generateNumber(selectedGender) {
+    let gender = selectedGender;
 
-    let maleOrFemale = '';
-
-    if (maleRadio.checked) {
-        maleOrFemale = 'male';
-    } else if (femaleRadio.checked) {
-        maleOrFemale = 'female';
-    } else if (randomRadio.checked) {
-        maleOrFemale = Math.random() < 0.5 ? 'male' : 'female';
-    } else {
-        replace.innerHTML = 'Please select Male, Female, or Random';
-        return;
+    // Handle "random" gender selection
+    if (selectedGender === 'random') {
+        gender = Math.random() < 0.5 ? 'male' : 'female';
     }
 
-    generatedName = generateName();
+    const generatedName = generateName(); // Generate the random name
+    console.log(`Your Gender is: ${gender}`);
     console.log(`Generated Name: ${generatedName}`);
-    replace.innerHTML = `Your fantasy name is: ${generatedName}`;
-}
 
-// Attach event listener to the Generate button
-button.addEventListener('click', generateNumber);
+    // Return the result to the AngularJS controller
+    return { gender, name: generatedName };
+}
