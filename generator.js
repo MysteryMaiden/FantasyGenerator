@@ -17,7 +17,7 @@ function generateName() {
         } else {
             name += vowels[Math.floor(Math.random() * vowels.length)];
         }
-    }
+    } 
     name = name.toLowerCase();
     return name.charAt(0).toUpperCase() + name.slice(1);
 }
@@ -50,6 +50,7 @@ function generateNumber() {
         generated = "yes";
         console.log(`Generated Status: ${generated}`);
     }
+    console.log('Your Gender is: ' + maleOrFemale)
 }
 
 // Loop to check when `generated` is "yes"
