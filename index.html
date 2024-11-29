@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +20,7 @@
     </nav>
 
     <!-- Main content -->
-    <div class="container">
+    <div class="container" ng-show="">
         <h1>Welcome to the Fantasy Name Generator!</h1>
         <h2>To get started, let's choose a name. Click the button to generate a random name.</h2>
 
@@ -42,5 +42,6 @@
     </div>
 
     <script src="generator.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 </body>
 </html>
