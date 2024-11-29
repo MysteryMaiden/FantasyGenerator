@@ -3,6 +3,7 @@ angular.module('generApp', [])
   // Initialize variables
   $scope.selectedGender = '';
   $scope.generatedName = '';
+  $scope.nameGeneratorDiv = true;
 
   // Function to generate a name using generator.js
   $scope.generateName = function() {
@@ -20,6 +21,7 @@ angular.module('generApp', [])
   // Function for "Next" button
   $scope.next = function() {
     alert('Next button clicked!');
+    $scope.nameGeneratorDiv = false;
     // Add logic for navigating to the next generator
   };
 });
