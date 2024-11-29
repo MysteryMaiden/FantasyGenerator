@@ -1,0 +1,55 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html ng-app="generApp">
+<head>
+    <title>D&D Character Builder</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+    <style>
+        .section {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        .radio-group {
+            margin: 15px 0;
+        }
+        .radio-group label {
+            margin-right: 15px;
+        }
+        .name-display {
+            margin: 15px 0;
+            padding: 10px;
+            border: 1px solid #eee;
+        }
+    </style>
+</head>
+<body ng-controller="formController">
+    <div class="section" ng-show="visibleSection === 'Name_Generator'">
+        <h2>Fantasy Name Generator</h2>
+        <div class="radio-group">
+            <input type="radio" ng-model="selectedGender" value="male" id="male">
+            <label for="male">Male</label>
+            
+            <input type="radio" ng-model="selectedGender" value="female" id="female">
+            <label for="female">Female</label>
+            
+            <input type="radio" ng-model="selectedGender" value="random" id="random">
+            <label for="random">Random</label>
+        </div>
+
+        <button ng-click="generateName()">Generate Name</button>
+
+        <div class="name-display">
+            {{ generatedName || 'Click the button to generate a name!' }}
+        </div>
+
+        <button ng-click="nextSection()" ng-show="generatedName">Next</button>
+    </div>
+
+    <div class="section" ng-show="visibleSection === 'Personality'">
+        <h2>Personality Generator</h2>
+        <p>Your selected name: {{ generatedName }}</p>
+        <button ng-click="previousSection()">Back</button>
+    </div>
+</body>
+</html>
