@@ -4,6 +4,6 @@ angular.module('generApp', [])
   G.todos = [
     {text:'learn AngularJS', done:true},
     {text:'build an AngularJS app', done:false}];
-
+g.nameG = true;
   
 });
