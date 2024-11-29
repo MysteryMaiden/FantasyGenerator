@@ -1,14 +1,14 @@
 
 
 angular.module('generApp', [])
-.controller('generateController', function() {
+.controller('generateController', function($scope) {
   var G = this;
   
-G.nameG = true;
+$scope.nameG = true;
 
-G.next = function(event){
+$scope.next = function(event){
 if(event == "name"){
-G.nameG = false;
+$scope.nameG = false;
   
 }
   
