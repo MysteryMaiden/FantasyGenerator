@@ -1,7 +1,7 @@
 angular.module('generApp', [])
 .controller('generateController', function($scope) {
   // Initialize variables
-  $scope.selectedGender = null; // Ensure this is explicitly null initially
+  $scope.selectedGender = null; // Ensure this starts as null
   $scope.generatedName = '';
   $scope.visibleSections = {
     'Name_Generator': true, // Initially show the Name Generator section
@@ -9,7 +9,7 @@ angular.module('generApp', [])
 
   // Function to generate a name using generator.js
   $scope.generateName = function() {
-    // Ensure a gender has been selected
+    // Validate if a gender has been selected
     if (!$scope.selectedGender) {
       alert('Please select Male, Female, or Random.');
       return;
