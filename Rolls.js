@@ -18,7 +18,7 @@ for (let i = 0; i < changes.length; i++) {
     const roll = rollTwenty(); // Get a random roll
     changes[i].innerText = roll; // Update the corresponding HTML element
     rolls[i] = roll;
-    
+     
 }
 console.log(rolls)
 generated = 'yes';
