@@ -9,6 +9,8 @@ angular.module('generApp', [])
 
   // Function to generate a name using generator.js
   $scope.generateName = function() {
+    console.log("Selected Gender:", $scope.selectedGender); // Debugging log
+
     // Validate if a gender has been selected
     if (!$scope.selectedGender) {
       alert('Please select Male, Female, or Random.');
