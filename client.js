@@ -1,14 +1,25 @@
 angular.module('generApp', [])
 .controller('generateController', function($scope) {
-    var G = this; // Optional, for using 'controller as' syntax
-    alert("TEST1");
+  // Initialize variables
+  $scope.selectedGender = '';
+  $scope.generatedName = '';
 
-    $scope.nameG = true; // Set to true initially to show the section
+  // Function to generate a name using generator.js
+  $scope.generateName = function() {
+    if (!$scope.selectedGender) {
+      alert('Please select Male, Female, or Random.');
+      return;
+    }
 
-    $scope.next = function(event) {
-        if (event === "name") {
-            alert("TEST");
-            $scope.nameG = false;
-        }
-    };
+    // Call the `generateNumber` function from generator.js
+    const generatedData = generateNumber($scope.selectedGender);
+    $scope.generatedName = generatedData.name; // Set the generated name
+    console.log(`Generated Name: ${$scope.generatedName}`);
+  };
+
+  // Function for "Next" button
+  $scope.next = function() {
+    alert('Next button clicked!');
+    // Add logic for navigating to the next generator
+  };
 });
