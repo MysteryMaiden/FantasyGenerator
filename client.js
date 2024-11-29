@@ -20,8 +20,10 @@ angular.module('generApp', [])
 
   // Function for "Next" button
   $scope.next = function() {
-    alert('Next button clicked!');
+ 
     $scope.nameGeneratorDiv = false;
+    alert('Next button clicked!' + $scope.nameGeneratorDiv);
+    
     // Add logic for navigating to the next generator
   };
 });
