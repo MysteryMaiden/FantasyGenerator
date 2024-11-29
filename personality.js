@@ -18,7 +18,7 @@ const ideals = [
     "Friendship", "Humility", "Growth", "Truth", "Wealth", "Protection", "Community", 
     "Change", "Equality", "Discovery", "Courage", "Balance", "Family", "Revenge", 
     "Leadership", "Faith", "Hope"
-]
+] 
 
 const bonds = [
     "Family first", "Childhood friend", "Lost love", "Mentor", "Old grudge", 
