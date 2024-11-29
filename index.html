@@ -6,7 +6,6 @@
   <title>Fantasy Name Generator</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body ng-controller="generateController">
   <!-- Navbar Section -->
@@ -22,34 +21,38 @@
 
   <!-- Main Content -->
   <div class="container">
-    <!-- Use ng-if to conditionally show the Name_Generator div -->
-    <div id="Name_Generator" class="col-md-12" ng-if="isVisible('Name_Generator')">
+    <!-- Name Generator Section -->
+    <div id="Name_Generator" class="col-md-12" ng-if="visibleSections['Name_Generator']">
       <h1>Welcome to the Fantasy Name Generator!</h1>
       <h2>To get started, let's choose a name. Click the button to generate a random name.</h2>
 
       <div class="radio-group">
-        <input type="radio" name="maleorfemale" id="male" ng-model="selectedGender" value="male">
-        <label for="male">Male</label>
+        <label>
+          <input type="radio" name="maleorfemale" ng-model="selectedGender" value="male"> Male
+        </label>
 
-        <input type="radio" name="maleorfemale" id="female" ng-model="selectedGender" value="female">
-        <label for="female">Female</label>
+        <label>
+          <input type="radio" name="maleorfemale" ng-model="selectedGender" value="female"> Female
+        </label>
 
-        <input type="radio" name="maleorfemale" id="random" ng-model="selectedGender" value="random">
-        <label for="random">Random</label>
+        <label>
+          <input type="radio" name="maleorfemale" ng-model="selectedGender" value="random"> Random
+        </label>
       </div>
     </div>
 
+    <!-- Generate Name Button -->
     <div class="col-md-12">
       <button class="btn btn-primary" ng-click="generateName()">Generate!</button>
       <p>{{ generatedName || 'Click the button to generate a name!' }}</p>
-      <!-- The Next button triggers a function to hide the "Name_Generator" section -->
-      <a href="#" class="btn btn-danger" ng-show="generatedName" ng-click="next('Name_Generator')">Next</a>
+
+      <!-- Next Button -->
+      <a href="#" class="btn btn-danger" ng-if="generatedName" ng-click="next('Name_Generator')">Next</a>
     </div>
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
   <script src="generator.js"></script>
   <script src="client.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
