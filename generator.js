@@ -2,7 +2,8 @@ const button = document.getElementById('generateButton');
 const replace = document.getElementById('ReplaceableText');
 const next = document.getElementById('NextButton');
 let generatedName;
-let generated = "no";
+
+// Arrays for generating random names
 const consonants = ['B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z'];
 const vowels = ['A', 'E', 'I', 'O', 'U'];
 
@@ -17,26 +18,24 @@ function generateName() {
         } else {
             name += vowels[Math.floor(Math.random() * vowels.length)];
         }
-    } 
-    name = name.toLowerCase();
-    return name.charAt(0).toUpperCase() + name.slice(1);
+    }
+    return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
 }
 
-// Function to generate the name based on selection
+// Function to handle gender selection and generate a name
 function generateNumber() {
-    let maleOrFemale = '';
-
     const maleRadio = document.getElementById('male');
     const femaleRadio = document.getElementById('female');
     const randomRadio = document.getElementById('random');
+
+    let maleOrFemale = '';
 
     if (maleRadio.checked) {
         maleOrFemale = 'male';
     } else if (femaleRadio.checked) {
         maleOrFemale = 'female';
     } else if (randomRadio.checked) {
-        let answer = Math.floor(Math.random() * 2);
-        maleOrFemale = answer === 0 ? 'male' : 'female';
+        maleOrFemale = Math.random() < 0.5 ? 'male' : 'female';
     } else {
         replace.innerHTML = 'Please select Male, Female, or Random';
         return;
@@ -44,16 +43,8 @@ function generateNumber() {
 
     generatedName = generateName();
     console.log(`Generated Name: ${generatedName}`);
-    const ReturnedText = `Your fantasy name is: ${generatedName}`;
-    replace.innerHTML = ReturnedText;
-    if (generatedName) {
-        generated = "yes";
-        console.log(`Generated Status: ${generated}`);
-    }
-    console.log('Your Gender is: ' + maleOrFemale)
+    replace.innerHTML = `Your fantasy name is: ${generatedName}`;
 }
 
-// Attach event listener to button
-button.addEventListener('click', () => {
-    generateNumber();
-});
+// Attach event listener to the Generate button
+button.addEventListener('click', generateNumber);
