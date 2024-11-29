@@ -17,6 +17,7 @@ angular.module('generApp', [])
 
     if (!$scope.selectedGender) {
       alert('Please select Male, Female, or Random.');
+      console.log('Selected Gender:', $scope.selectedGender);
       return;
     }
 
