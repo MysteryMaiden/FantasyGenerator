@@ -26,23 +26,21 @@
       <h1>Welcome to the Fantasy Name Generator!</h1>
       <h2>To get started, let's choose a name. Click the button to generate a random name.</h2>
 
+      <div class="radio-group">
+        <label>
+          <input type="radio" name="maleorfemale" ng-model="selectedGender" value="male"> Male
+        </label>
 
+        <label>
+          <input type="radio" name="maleorfemale" ng-model="selectedGender" value="female"> Female
+        </label>
 
+        <label>
+          <input type="radio" name="maleorfemale" ng-model="selectedGender" value="random"> Random
+        </label>
+      </div>
 
-<div class="radio-group">
-  <label>
-    <input type="radio" name="maleorfemale" ng-model="selectedGender" value="male"> Male
-  </label>
-
-  <label>
-    <input type="radio" name="maleorfemale" ng-model="selectedGender" value="female"> Female
-  </label>
-
-  <label>
-    <input type="radio" name="maleorfemale" ng-model="selectedGender" value="random"> Random
-  </label>
-</div>
-
+      <p>Debug: Selected Gender = {{ selectedGender }}</p> <!-- Debugging -->
     </div>
 
     <!-- Generate Name Button -->
