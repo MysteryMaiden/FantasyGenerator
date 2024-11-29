@@ -1,18 +1,14 @@
-
-
 angular.module('generApp', [])
 .controller('generateController', function($scope) {
-  var G = this;
-   alert("TEST1")
-$scope.nameG = false;
+    var G = this; // Optional, for using 'controller as' syntax
+    alert("TEST1");
 
-$scope.next = function(event){
-if(event == "name"){
-  alert("TEST")
-$scope.nameG = false;
-  
-}
-  
-}:
-  
+    $scope.nameG = true; // Set to true initially to show the section
+
+    $scope.next = function(event) {
+        if (event === "name") {
+            alert("TEST");
+            $scope.nameG = false;
+        }
+    };
 });
