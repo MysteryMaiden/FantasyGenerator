@@ -7,6 +7,11 @@ angular.module('generApp', [])
     'Name_Generator': true, // Initially show the Name Generator section
   };
 
+  // Watch for changes to selectedGender for debugging
+  $scope.$watch('selectedGender', function(newVal) {
+    console.log('Selected Gender updated to:', newVal);
+  });
+
   // Function to generate a name using generator.js
   $scope.generateName = function() {
     console.log("Selected Gender:", $scope.selectedGender); // Debugging log
