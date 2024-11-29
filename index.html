@@ -38,9 +38,9 @@
         </label>
       </div>
 
-      <button id="generateButton" class="btn btn-primary" ng-click="generateName()">Generate!</button>
+      <button class="btn btn-primary" ng-click="generateName()">Generate!</button>
       <p id="ReplaceableText">{{ generatedName || 'Click the button to generate a name!' }}</p>
-      <button class="btn btn-danger mt-3" id="NextButton" ng-click="showSection('Personality')" ng-disabled="!generatedName">Next</button>
+      <button class="btn btn-danger mt-3" ng-click="showSection('Personality')" ng-disabled="!generatedName">Next</button>
     </div>
 
     <!-- Personality Section -->
@@ -48,7 +48,6 @@
       <h1>Personality Generator</h1>
       <h2>Customize your character's personality.</h2>
       <p>Your selected name: {{ generatedName }}</p>
-      <!-- Add personality form fields here -->
       <button class="btn btn-secondary mt-3" ng-click="showSection('Name_Generator')">Back</button>
     </div>
   </div>
