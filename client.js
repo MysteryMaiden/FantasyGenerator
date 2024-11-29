@@ -1,7 +1,7 @@
 angular.module('generApp', [])
 .controller('generateController', function($scope) {
   // Initialize variables
-  $scope.selectedGender = null; // Ensure this starts as null
+  $scope.selectedGender = null; // Default: no selection
   $scope.generatedName = '';
   $scope.visibleSections = {
     'Name_Generator': true, // Initially show the Name Generator section
@@ -16,8 +16,8 @@ angular.module('generApp', [])
     }
 
     // Call the generateNumber function from generator.js
-    const generatedData = generateNumber($scope.selectedGender);
-    $scope.generatedName = generatedData.name; // Update generated name
+    const generatedData = generateNumber($scope.selectedGender); // Pass selectedGender
+    $scope.generatedName = generatedData.name; // Set the generated name
     console.log(`Generated Name: ${$scope.generatedName}`);
   };
 
