@@ -18,17 +18,17 @@ function generateName() {
 
 // Function to handle gender selection and generate a name
 function generateNumber(selectedGender) {
-  let maleOrFemale = selectedGender;
+  let gender = selectedGender;
 
   // Handle "random" gender selection
   if (selectedGender === 'random') {
-    maleOrFemale = Math.random() < 0.5 ? 'male' : 'female';
+    gender = Math.random() < 0.5 ? 'male' : 'female';
   }
 
-  const generatedName = generateName(); // Call the name generation logic
-  console.log(`Your Gender is: ${maleOrFemale}`);
+  const generatedName = generateName(); // Generate the random name
+  console.log(`Your Gender is: ${gender}`);
   console.log(`Generated Name: ${generatedName}`);
 
-  // Return generated data
-  return { gender: maleOrFemale, name: generatedName };
+  // Return the result to the AngularJS controller
+  return { gender, name: generatedName };
 }
