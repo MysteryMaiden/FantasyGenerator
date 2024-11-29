@@ -3,7 +3,7 @@ angular.module('generApp', [])
   // Initialize variables
   $scope.selectedGender = '';
   $scope.generatedName = '';
-  $scope.nameGeneratorDiv = true;
+  $scope.hiddenSections = {}; // Track which sections are hidden
 
   // Function to generate a name using generator.js
   $scope.generateName = function() {
@@ -18,12 +18,14 @@ angular.module('generApp', [])
     console.log(`Generated Name: ${$scope.generatedName}`);
   };
 
-  // Function for "Next" button
-  $scope.next = function() {
- 
-    //$scope.nameGeneratorDiv = false;
-    alert('Next button clicked!' + $scope.nameGeneratorDiv);
-    
-    // Add logic for navigating to the next generator
+  // Function to determine if a section is visible
+  $scope.isVisible = function(section) {
+    return !$scope.hiddenSections[section]; // Visible if not in hiddenSections
+  };
+
+  // Function for the "Next" button to hide sections dynamically
+  $scope.next = function(section) {
+    $scope.hiddenSections[section] = true; // Hide the specified section
+    console.log(`${section} is now hidden.`);
   };
 });
