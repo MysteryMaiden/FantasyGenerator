@@ -22,7 +22,8 @@
 
   <!-- Main Content -->
   <div class="container">
-    <div id="Name_Generator" class="col-md-12" ng-if="nameGeneratorDiv">
+    <!-- Use ng-if to conditionally show the Name_Generator div -->
+    <div id="Name_Generator" class="col-md-12" ng-if="isVisible('Name_Generator')">
       <h1>Welcome to the Fantasy Name Generator!</h1>
       <h2>To get started, let's choose a name. Click the button to generate a random name.</h2>
 
@@ -37,10 +38,12 @@
         <label for="random">Random</label>
       </div>
     </div>
+
     <div class="col-md-12">
       <button class="btn btn-primary" ng-click="generateName()">Generate!</button>
       <p>{{ generatedName || 'Click the button to generate a name!' }}</p>
-      <a href="#" class="btn btn-danger" ng-show="generatedName" ng-click="next()">Next</a>
+      <!-- The Next button triggers a function to hide the "Name_Generator" section -->
+      <a href="#" class="btn btn-danger" ng-show="generatedName" ng-click="next('Name_Generator')">Next</a>
     </div>
   </div>
 
