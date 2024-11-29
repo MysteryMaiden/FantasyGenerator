@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ability Score Generator</title>  
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar Section -->
+    <div class="navbar">
+        <h2>Fantasy Generator</h2>
+        <ul class="nav-links">
+            <li><a href="./Index.html">Name Generator</a></li>
+            <li><a href="./ability.html">Ability Generator</a></li>
+            <li><a href="./personality.html">Personality Generator</a></li>
+            <li><a href="./racenclass.html">Race and class generator</a></li>
+        </ul> 
+    </div>
+    <div class="container">
+        <h1>Welcome to the Race and Class Generator!</h1>
+        <h2>Click the generate button to generate a Race, and Class.</h2>
+        <ul>
+            <li><strong>Race :</strong><p id="race"></p></li>
+            <li><strong>class :</strong><p id="class"></p></li>
+        </ul>
+        <input type="submit" id="generateButton" value="Generate!">
+        <!-- Next button starts hidden -->
+        <a href="#" id="finishButton" style="display:none;">Finish!</a>
+    </div>
+    <script src="./racenclass.js"></script>
+</body>
+</html>
