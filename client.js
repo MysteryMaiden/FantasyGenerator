@@ -6,7 +6,7 @@ angular.module('generApp', [])
   
 G.nameG = true;
 
-G.name = function(event){
+G.next = function(event){
 if(event == "name"){
 G.nameG = false;
   
