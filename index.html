@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="generApp">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,46 +8,45 @@
   <link rel="stylesheet" href="style.css">
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 </head>
-<body>
+<body ng-controller="generateController">
   <!-- Navbar Section -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <h2 class="navbar-brand">Fantasy Generator</h2>
-      <ul class="navbar-nav">
-        <li class="nav-item"><a href="./index.html" class="nav-link">Name Generator</a></li>
-        <li class="nav-item"><a href="./ability.html" class="nav-link">Ability Generator</a></li>
-        <li class="nav-item"><a href="./personality.html" class="nav-link">Personality Generator</a></li>
-        <li class="nav-item"><a href="./racenclass.html" class="nav-link">Race and Class Generator</a></li>
-      </ul>
-    </div>
+  <nav class="navbar">
+    <h2>Fantasy Generator</h2>
+    <ul class="nav-links">
+      <li><a href="./index.html">Name Generator</a></li>
+      <li><a href="./ability.html">Ability Generator</a></li>
+      <li><a href="./personality.html">Personality Generator</a></li>
+      <li><a href="./racenclass.html">Race and Class Generator</a></li>
+    </ul>
   </nav>
 
   <!-- Main Content -->
-  <div class="container mt-5">
+  <div class="container">
     <div id="Name_Generator" class="col-md-12">
       <h1>Welcome to the Fantasy Name Generator!</h1>
       <h2>To get started, let's choose a name. Click the button to generate a random name.</h2>
 
       <div class="radio-group">
-        <label>
-          <input type="radio" name="maleorfemale" id="male" value="male"> Male
-        </label>
-        <label>
-          <input type="radio" name="maleorfemale" id="female" value="female"> Female
-        </label>
-        <label>
-          <input type="radio" name="maleorfemale" id="random" value="random"> Random
-        </label>
+        <input type="radio" name="maleorfemale" id="male" ng-model="selectedGender" value="male">
+        <label for="male">Male</label>
+
+        <input type="radio" name="maleorfemale" id="female" ng-model="selectedGender" value="female">
+        <label for="female">Female</label>
+
+        <input type="radio" name="maleorfemale" id="random" ng-model="selectedGender" value="random">
+        <label for="random">Random</label>
       </div>
     </div>
-    <div class="col-md-12 mt-4">
-      <button id="generateButton" class="btn btn-primary">Generate!</button>
-      <p id="ReplaceableText">Click the button to generate a name!</p>
-      <button id="NextButton" class="btn btn-danger mt-3" style="display:none;">Next</button>
+    <div class="col-md-12">
+      <button class="btn btn-primary" ng-click="generateName()">Generate!</button>
+      <p>{{ generatedName || 'Click the button to generate a name!' }}</p>
+      <a href="#" class="btn btn-danger" ng-show="generatedName" ng-click="next()">Next</a>
     </div>
   </div>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
   <script src="generator.js"></script>
+  <script src="client.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
